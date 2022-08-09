@@ -1,0 +1,20 @@
+name: hello
+
+on: push
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: echo Hello, world
+    - name: Run a multi-line script
+      run: |
+       sudo yum install python -y
+       pip3 install pymysql --user
+       pip3 install pandas --user
+       sudo pip3 install sqlalchemy --user
+       pip3 install mysql-connector-python --user
